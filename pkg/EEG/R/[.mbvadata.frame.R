@@ -13,7 +13,9 @@ function(x, rows, cols)
 	df = x$df[rows, cols, drop=FALSE]
 	mbvadata = x$data[rows]
 	rownames(df) = names(mbvadata)
-	if(x$data.nm %in% colnames(x$df)[cols]) 
+	if(length(rows)==1 && length(cols)==1 && cols==1)
+		mbvadata[[1]]
+	else if(x$data.nm %in% colnames(x$df)[cols]) 
 		structure(list(df=df, data.nm = x$data.nm, data=mbvadata), class="mbvadata.frame")
 	else
 		df

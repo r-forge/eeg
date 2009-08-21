@@ -21,9 +21,13 @@ function(file=file.choose())
    dfile = gsub("[^\\\\]+$",str$`Common Infos`$DataFile,file);
    mfile = gsub("[^\\\\]+$",str$`Common Infos`$MarkerFile,file);
    if(is.null(dfile))
-      warning("no data file specified in header");
+      warning("no data file specified in header")
+   else
+      dfile = gsub("[^/]+?\\.vhdr", dfile, file)
    if(is.null(mfile))
-      warning("no marker file specified in header");
+      warning("no marker file specified in header")
+   else
+      mfile = gsub("[^/]+?\\.vhdr", mfile, file)
    x = readBVADataFile(dfile,mfile,dec=str$`ASCII Infos`$DecimalSymbol);
    x$header = str;
    x
