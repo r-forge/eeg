@@ -3,9 +3,8 @@
 \alias{names2factors}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
 This function takes a vector of (e.g. file-)names that uses a fixed scheme to 
-encode a factorial design and returns a \code{data.frame} with the factors decoded
+encode a factorial design and returns a data frame with the factors decoded
 This is useful for filenames which encode specific data
 }
 \description{
