@@ -3,7 +3,7 @@
 \alias{t.testERPplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+OBSOLETE plotting function
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -126,5 +126,4 @@ function(x,y,i=2,alpha=0.05,xdens=NULL,cicolx='gray',legx="topright", legy=ylim[
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

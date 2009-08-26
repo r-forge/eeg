@@ -1,26 +1,28 @@
 \name{plot.bvadata}
 \Rdversion{1.1}
 \alias{plot.bvadata}
+\alias{plot.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Plot bvadata as time series
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Simple plotting of signal averages across trials
 }
 \usage{
-plot.bvadata(x, ..., main = deparse(substitute(x)))
+\method{plot}{bvadata}(x, ..., main = deparse(substitute(x)))
+\method{plot}{mean.bvadata}(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+bvadata object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+extra graphical parameters; see \code{link{par}}
 }
   \item{main}{
-%%     ~~Describe \code{main} here~~
+plot title
 }
 }
 \details{
@@ -37,16 +39,16 @@ plot.bvadata(x, ..., main = deparse(substitute(x)))
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
-%%  ~~further notes~~
+Only 10 channels can be plot simultaneously; see \code{\link[plot.ts]{plot}}
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+ \code{\link[plot.ts]{plot}}, \code{\link[as.ts.bvadata]{as.ts}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -60,5 +62,4 @@ function(x, ..., main=deparse(substitute(x))) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

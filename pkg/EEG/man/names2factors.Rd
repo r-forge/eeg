@@ -46,11 +46,7 @@ If the name segment corresponding to a formula term with multiple factors (such 
 In this case, the segment \code{"LDD"} would be split into \code{"LD"} and \code{"D"} and assigned to the factors \code{side} and \code{level} respectively. 
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A data frame with factors in columns whose names are the variable names in the formula.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -75,5 +71,5 @@ Raoul Grasman
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ design }% __ONLY ONE__ keyword per line

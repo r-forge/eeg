@@ -3,24 +3,21 @@
 \alias{all.equal.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+test if two bvadata objects are equal
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+test if two bvadata objects are equivalent
 }
 \usage{
 all.equal.bvadata(x, y, important, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{x}, \item{y}{
+objects of class \code{bvadata}
 }
   \item{important}{
-%%     ~~Describe \code{important} here~~
+character vector of header node names that need to be equal
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
@@ -66,5 +63,6 @@ function(x,y,important, ...){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }
+\keyword{ programming }

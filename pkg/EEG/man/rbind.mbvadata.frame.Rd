@@ -3,21 +3,18 @@
 \alias{rbind.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Bind mbvadata frames
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Bind the rows of two \code{mbvadata.frame} objects into a single \code{mbvadata.frame}
 }
 \usage{
 rbind.mbvadata.frame(a, b)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{a}{
-%%     ~~Describe \code{a} here~~
-}
-  \item{b}{
-%%     ~~Describe \code{b} here~~
+  \item{a, b}{
+Two \code{mbvadata.frame}s
 }
 }
 \details{
@@ -34,7 +31,7 @@ rbind.mbvadata.frame(a, b)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -66,5 +63,4 @@ function(a, b)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

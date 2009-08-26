@@ -1,23 +1,25 @@
 \name{image.bvadata}
 \Rdversion{1.1}
 \alias{image.bvadata}
+\alias{image.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Potential distribution topographies
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Function to plot potential distribution topographies of ERPs.
 }
 \usage{
-image.bvadata(x, ...)
+\method{image}{bvadata}(x, ...)
+\method{image}{mean.bvadata}(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+bvadata object or mean.bvadata object.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments passed to \code{\link{image}} and interpolation algorithm
 }
 }
 \details{
@@ -58,5 +60,4 @@ function(x, ...)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

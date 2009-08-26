@@ -3,10 +3,10 @@
 \alias{grandAvrg}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Compute grand average across bvadata objects.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Compute grand average across bvadata objects. This function is OBSOLETE.
 }
 \usage{
 grandAvrg(..., verbose = TRUE)
@@ -14,14 +14,14 @@ grandAvrg(..., verbose = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+bvadata objects
 }
   \item{verbose}{
-%%     ~~Describe \code{verbose} here~~
+should feedback be printed on console?
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+OBSOLETE use \code{\link[mean.bvadata]{mean}} on \code{bvadata} objects and \code{\link{mbvadata.frame}} to bind them together for further analysis.
 }
 \value{
 %%  ~Describe the value returned
@@ -34,16 +34,17 @@ grandAvrg(..., verbose = TRUE)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
+\section{Warning }{This function is OBSOLETE. DO NOT USE IT. TO BE REMOVED.}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[mean.bvadata]{mean}}, \code{\link{mbvadata.frame}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -122,5 +123,4 @@ function(..., verbose=TRUE){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

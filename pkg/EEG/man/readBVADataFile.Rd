@@ -3,10 +3,10 @@
 \alias{readBVADataFile}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Read data from Brain Vision Analyzer data file
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Read data from Brain Vision Analyzer data file.
 }
 \usage{
 readBVADataFile(file = file.choose(), mfile = gsub("\\..+$", ".VMRK", file), dec = ".")
@@ -14,7 +14,7 @@ readBVADataFile(file = file.choose(), mfile = gsub("\\..+$", ".VMRK", file), dec
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{file}{
-%%     ~~Describe \code{file} here~~
+file name
 }
   \item{mfile}{
 %%     ~~Describe \code{mfile} here~~
@@ -40,13 +40,13 @@ readBVADataFile(file = file.choose(), mfile = gsub("\\..+$", ".VMRK", file), dec
 %%  ~~who you are~~
 }
 \note{
-%%  ~~further notes~~
+Intended for internal use only
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{importBVA}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -112,5 +112,4 @@ function(file=file.choose(),mfile=gsub("\\..+$",".VMRK",file),
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

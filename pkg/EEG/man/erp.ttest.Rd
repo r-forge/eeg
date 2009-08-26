@@ -3,10 +3,10 @@
 \alias{erp.ttest}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Generic Event Related Potential t-test function
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Generic function for sample wise t-tests on ERPs
 }
 \usage{
 erp.ttest(x, ...)
@@ -14,10 +14,10 @@ erp.ttest(x, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments to the methods
 }
 }
 \details{
@@ -34,7 +34,7 @@ erp.ttest(x, ...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -43,17 +43,17 @@ erp.ttest(x, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[t.test.mbvadata.frame]{t.test}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+
 ## The function is currently defined as
 function(x, ...) NextMethod("erp.test")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ htest }

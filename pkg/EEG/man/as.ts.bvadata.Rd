@@ -1,34 +1,34 @@
 \name{as.ts.bvadata}
 \Rdversion{1.1}
 \alias{as.ts.bvadata}
+\alias{as.ts.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Convert bvadata or mean.bvadata object to time series object
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Convert bvadata or mean.bvadata object to a multivariate time series object
 }
 \usage{
-as.ts.bvadata(x, ...)
+\method{as.ts}{bvadata}(x, ...)
+\method{as.ts}{mean.bvadata}(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+\code{bvadata} object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Currently unused
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\code{mts} object with as many time series as there are channels.
+
+If \code{x} is a \code{bvadata} object, the time series are the result from averaging across the available trials.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -43,12 +43,13 @@ as.ts.bvadata(x, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[EEG:mean.bvadata]{mean}}, \code{\link{as.ts}}, \code{\link[stats:plot.ts]{plot}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+pp01 = importBVA()
+plot(as.ts(pp01[,1:10,])) # maximum of 10 time series can be handled by plot
+}
 
 ## The function is currently defined as
 function(x, ...) {
@@ -58,5 +59,5 @@ function(x, ...) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }

@@ -3,28 +3,25 @@
 \alias{c.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+combine to or more bvadata objects
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+concatenate two or more bvadata objects into a single bvadata object
 }
 \usage{
 c.bvadata(x, y, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
-}
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+  \item{x}, \item{y}, \item{\dots}{
+	bvadata objects
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+objects are currently only concatenated if their header are conformable
+
+
+NEEDS MORE DETAIL about how $markers are combined
 }
 \value{
 %%  ~Describe the value returned
@@ -37,7 +34,7 @@ c.bvadata(x, y, ...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -98,5 +95,5 @@ function(x,y, ...){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }

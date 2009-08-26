@@ -3,10 +3,10 @@
 \alias{batchImportBVA}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Batch import EEG data sets exported from Brain Vision Analyzer
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Import multiple BVA exported EEG data sets in a folder based on a filter pattern.
 }
 \usage{
 batchImportBVA(path, pat = "\\.vhdr$", nm.pat = "^(.).(\\d{2}).{4}([a-z]{2,3}).([a-z]{3}).([a-z]).+vhdr", newnm.pat = paste(paste("\\", 1:nc, sep = ""), collapse = "."))
@@ -14,33 +14,29 @@ batchImportBVA(path, pat = "\\.vhdr$", nm.pat = "^(.).(\\d{2}).{4}([a-z]{2,3}).(
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{path}{
-%%     ~~Describe \code{path} here~~
+path to the directory that contains the data sets to be imported
 }
   \item{pat}{
-%%     ~~Describe \code{pat} here~~
+\link[regex]{regular expression} that is used to filter the directory listing obtained with \code{dir()}
 }
   \item{nm.pat}{
-%%     ~~Describe \code{nm.pat} here~~
+\link[regex]{regular expression} pattern that is used to extract info from the file name that is used to create a name for the data set object
 }
   \item{newnm.pat}{
-%%     ~~Describe \code{newnm.pat} here~~
+\link[regex]{regular expression} pattern that specifies how the info extracted with \code{nm.pat} is to be combined in the new data objects name
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This is simply a wrapper function for multiple calls to \code{readBVADataFile}.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A list with in each component the imported data sets as \code{bvadata} objects.
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -49,30 +45,15 @@ batchImportBVA(path, pat = "\\.vhdr$", nm.pat = "^(.).(\\d{2}).{4}([a-z]{2,3}).(
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{readBVADataFile}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(path, pat = "\\.vhdr$",
-		nm.pat="^(.).(\\d{2}).{4}([a-z]{2,3}).([a-z]{3}).([a-z]).+vhdr",
-		newnm.pat=paste(paste("\\",1:nc,sep=""),collapse=".")){
-	nms = dir(path, pat)
-	enms = dir(path, pat, full.names=TRUE)
-	nc = length(strsplit(nm.pat, "\\([^\\)]+\\)")[[1]]) # number of components for new names
-	nm.repl = newnm.pat
-	nms = gsub(nm.pat,nm.repl,tolower(dir(path,pat)),perl=TRUE)
-	names(enms) = nms
-	cat(length(enms)," data sets found.\n")
-	if(length(enms)>0)
-		cat("Importing...","\n")
-	lapply(enms, function(f){cat(f,"\n"); flush.console(); importBVA(f); })
-  }
+	\dontrun{
+		dat = batchImportBVA("./raw_ascii_eeg", pat="\\.vhdr$", 
+				nm.pat="(.+)\\.vhdr$", newnm.pat="\\1")
+	}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ classes }

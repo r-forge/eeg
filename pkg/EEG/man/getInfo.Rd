@@ -3,10 +3,10 @@
 \alias{getInfo}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Find value of a node in a complect list tree
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Find the value of a named node in a complex hierarchical list tree structure.
 }
 \usage{
 getInfo(x, what)
@@ -14,14 +14,14 @@ getInfo(x, what)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+list tree
 }
   \item{what}{
-%%     ~~Describe \code{what} here~~
+name of the node whose value has to be retrieved
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Inefficient recursive implementation
 }
 \value{
 %%  ~Describe the value returned
@@ -34,7 +34,7 @@ getInfo(x, what)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -55,5 +55,5 @@ function(x,what){if(length(x)==1) NULL else if(what \%in\% names(x)) x[[what]] e
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+

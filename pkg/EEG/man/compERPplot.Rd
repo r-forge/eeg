@@ -3,10 +3,10 @@
 \alias{compERPplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Plot two ERP's for comparison
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plot single channel ERPs from two bvadata objects superimposed for comparison.
 }
 \usage{
 compERPplot(x, y, i = 2, cicolx = "gray", cicoly = "steelblue", xdens = NULL, ydens = 12, xlocleg = max(timex) * 0.7, ylocleg = ylim[2] * 0.9)
@@ -14,31 +14,31 @@ compERPplot(x, y, i = 2, cicolx = "gray", cicoly = "steelblue", xdens = NULL, yd
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+first bvadata object
 }
   \item{y}{
-%%     ~~Describe \code{y} here~~
+second bvadata object
 }
   \item{i}{
-%%     ~~Describe \code{i} here~~
+channel to be plotted
 }
   \item{cicolx}{
-%%     ~~Describe \code{cicolx} here~~
+color for the confidence interval of the ERP from bvadata object \code{x}
 }
   \item{cicoly}{
-%%     ~~Describe \code{cicoly} here~~
+color for the confidence interval of the ERP from bvadata object \code{y}
 }
   \item{xdens}{
-%%     ~~Describe \code{xdens} here~~
+line density of \code{x}'s confidence interval (see \code{\link{polygon}})
 }
   \item{ydens}{
-%%     ~~Describe \code{ydens} here~~
+line density of \code{y}'s confidence interval (see \code{\link{polygon}})
 }
   \item{xlocleg}{
-%%     ~~Describe \code{xlocleg} here~~
+x-coordinate of the legend
 }
   \item{ylocleg}{
-%%     ~~Describe \code{ylocleg} here~~
+y-coordinate of the legend
 }
 }
 \details{
@@ -55,7 +55,7 @@ compERPplot(x, y, i = 2, cicolx = "gray", cicoly = "steelblue", xdens = NULL, yd
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -67,28 +67,13 @@ compERPplot(x, y, i = 2, cicolx = "gray", cicoly = "steelblue", xdens = NULL, yd
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(x,y,i=2,cicolx="gray", cicoly="steelblue", xdens=NULL, ydens=12,
-xlocleg=max(timex)*.7, ylocleg=ylim[2]*.9)
-{
- xm = x$mean()[,i]; xse = x$se()[,i]; ym = y$mean()[,i]; yse = y$se()[,i];
- xuci = xm+1.96*xse; xbci = xm-1.96*xse; yuci=ym+1.96*yse; ybci=ym-1.96*yse;
- ylim = range(xuci,xbci,yuci,ybci)
- timex = (x$header$`Common Infos`$SamplingInterval/1e3)*(-1+1:length(xm)); # msec
- timey = (y$header$`Common Infos`$SamplingInterval/1e3)*(-1+1:length(ym)); # msec
- plot(timex,xm, type='l', col=2, lwd=3, ylim=ylim,xlab="Time",ylab=expression(Amplitude~(mu~V)))
- polygon(c(timex,rev(timex)), c(xuci,rev(xbci)), col=cicolx, density=xdens);
- polygon(c(timey,rev(timey)), c(yuci,rev(ybci)), col=cicoly, density=ydens,angle=365-45);
- lines(timex, xm, col=2, lty=1, lwd=3)
- lines(timey, ym, col=3, lty=1, lwd=3)
- legend(xlocleg,ylocleg, c(deparse(substitute(x)),deparse(substitute(y))), fill=c(cicolx,cicoly), col=2:3, lwd=3, lty=1, density=c(xdens,ydens))
-  }
+	\dontrun{
+		x = readBVADataFile("dataset1.vhdr")
+		y = readBVADataFile("dataset2.vhdr")
+		compERPplot(x, y)
+		compERPplot(x[,,1:30], x[,,31:60]) # compare first 30 with last 30 trials
+	}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }

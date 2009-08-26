@@ -1,10 +1,11 @@
 Package: EEG
 Type: Package
-Title: What the package does (short line)
+Title: Import EEG for ERP analysis and plotting
 Version: 1.0
 Date: 2009-07-29
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Raoul Grasman
+Maintainer: Raoul Grasman <rgrasman@uva.nl>, Wouter Weeda <w.d.weeda1@uva.nl>
+Description: This package reads in single trial EEG (currently only ascii-exported preprocessed and trial segmented in Brain Vision Analyzer), computes averages (i.e., ERP's) and stores ERP's from multiple data sets in a data.frame like object, such that statistical analysis (linear model, (M)ANOVA) can be done using the familiar R modeling frame work.
+License: GPL v. 2 or higher (at your choice)
 LazyLoad: yes
+Depends: lattice

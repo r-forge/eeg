@@ -3,43 +3,46 @@
 \alias{as.data.frame.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Convert mbvadata.frame to data.frame with amplitude values as columns
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Convert mbvadata.frame to a regular data.frame extracting amplitudes values at specified sets of electrodes and time samples. Useful for statistical analysis of the extracted amplitude values.
 }
 \usage{
-as.data.frame.mbvadata.frame(x, channels, samples, from, to, vnames, FUN = c, ...)
+\method{as.data.frame}{mbvadata.frame}(x, channels, samples, from, to, vnames, FUN = c, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+mbvadata.frame
 }
   \item{channels}{
-%%     ~~Describe \code{channels} here~~
+Channels for which amplitude samples have to be extracted
 }
   \item{samples}{
-%%     ~~Describe \code{samples} here~~
+Samples at which amplitudes have to be extracted; alternatively, specify \code{from} and \code{to}
 }
   \item{from}{
-%%     ~~Describe \code{from} here~~
+Start time (in time units, e.g., msec) for epoch from which the amplitudes have to be extracted
 }
   \item{to}{
-%%     ~~Describe \code{to} here~~
+End time (in time units) for epoch from which the amplitudes have to be extracted
 }
   \item{vnames}{
-%%     ~~Describe \code{vnames} here~~
+character vector of names under which the amplitude values of different samples and channels are stored
 }
   \item{FUN}{
-%%     ~~Describe \code{FUN} here~~
+function that can be applied to the extracted epoch/samples, e.g. \code{colMeans} for average amplitude; should return one value per channel (see details)
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments that are passed to \code{FUN}
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The \code{mbvadata.frame} \code{x} is converted to a \code{data.frame} with the same factors as \code{x} itself. Variables are added however which are named by combining the channel name(s) and sample number(s) by default, or are given a name from \code{vnames}. The new variables are the amplitudes at the indicated channel and time sample (for each channel/sample combination a variable is added), or are the result returned by \code{FUN} (if specified.
+
+\code{FUN} must accept a matrix and return a vector.
+
 }
 \value{
 %%  ~Describe the value returned
@@ -52,7 +55,7 @@ as.data.frame.mbvadata.frame(x, channels, samples, from, to, vnames, FUN = c, ..
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -126,5 +129,5 @@ function(x, channels, samples, from, to, vnames, FUN=c, ...) # dots for compatib
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }

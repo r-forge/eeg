@@ -3,44 +3,40 @@
 \alias{louter}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Outer for lists
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function is a replacement for \code{outer} in case both arguments that are to be crossed are lists.
 }
 \usage{
 louter(x, y, FUN, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{x, y}{
+lists
 }
   \item{FUN}{
-%%     ~~Describe \code{FUN} here~~
+a function that accepts two arguments to be applied to all possible pairs of elements from 
+\code{x} and \code{y}
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments passed to \code{FUN}
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+\code{outer} doesn't always work well with \code{list}s. See Examples for an artificial example.
+
+\code{FUN} does needs not be vectorized.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+a (generalized) matrix
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -49,17 +45,18 @@ louter(x, y, FUN, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[base:outer]{outer}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\code{outer(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b)))} 
+# gives an error, whereas
+\code{louter(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b)))} 
+# returns as expected
 
 ## The function is currently defined as
 function(x, y, FUN, ...) {if(missing(y)) y=x else if(is.function(y)){FUN = y; y=x}; sapply(x, function(x) sapply(y, function(y) FUN(x,y,...)))} # outer doesn't work well with lists
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ array }% __ONLY ONE__ keyword per line

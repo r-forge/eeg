@@ -3,10 +3,10 @@
 \alias{importBVA}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Import data sets exported from Brain Vision Analyzer
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Import data sets exported from Brain Vision Analyzer in ascii files including header and marker files.
 }
 \usage{
 importBVA(file = file.choose())
@@ -14,24 +14,34 @@ importBVA(file = file.choose())
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{file}{
-%%     ~~Describe \code{file} here~~
+name of the header file ('.vhdr') to be imported
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\code{bvadata} object with components
+\item{x }{a function that accepts no arguments and returns the raw data array}
+\item{acrossTrials }{ a function that accepts a function \code{func} and arrays \code{samples},
+\code{channels}, and \code{trials}. When called, the function \code{func} is applied to the selected 
+channels and samples across the selected trials using \code{\link{apply}}.}
+\item{mean }{a function that returns the average of the signals across trials---i.e., it computes the ERP.}
+\item{sd }{a function that returns the standard deviation of the signals across trials.}
+\item{se }{a function that returns the standard error of the ERPs obtained with \code{$mean}.}
+\item{info }{a function that returns a vector containing the number of samples (\code{nsamp}), the number of channels (\code{nchan}), and the number of trials (\code{ntrial}) }
+\item{stimindx}{a vector containing the indices of the samples on which the stimulus was presented}
+\item{segmindx}{a vector containing the indices of the start of each trial epoch}
+\item{time0indx}{a vector containing the indices of the samples that defines t=0 for each trial}
+\item{file}{the full path to file from which the data were read}
+\item{markers}{a data frame containing the marker file information}
+\item{header}{a list structure that contains all information from the header file of the data set}
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -43,9 +53,10 @@ importBVA(file = file.choose())
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+pp01 = importBVA() # pin point to the .vhdr file of the data set in the finder window
+pp01 # shows basic info on the data set
+}
 
 ## The function is currently defined as
 function(file=file.choose())
@@ -80,5 +91,4 @@ function(file=file.choose())
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

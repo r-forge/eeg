@@ -3,41 +3,31 @@
 \alias{mintersect}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Intersection of multiple sets
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function generalizes \code{intersect} to multiple sets
 }
 \usage{
 mintersect(x, y, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
-}
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+  \item{x, y, \dots}{
+vectors (of the same mode) containing a sequence of items (conceptually) with no duplicated values.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+	inefficient recursive implementation
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+A vector of the same mode as the imput vectors
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -46,17 +36,13 @@ mintersect(x, y, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{intersect}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+mintersect(1:5, 2:7, 3:6)
 
-## The function is currently defined as
-function(x,y,...){is=intersect(x,y); if(length(list(...))>0) mintersect(is,...) else is;}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ math }

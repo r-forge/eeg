@@ -1,50 +1,42 @@
 \name{erp.ttest.mbvadata.frame}
 \Rdversion{1.1}
 \alias{erp.ttest.mbvadata.frame}
+\alias{t.test.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Time sample-wise t-tests for ERPs
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Function to do a pairwise comparison between two mvbadata.frames on a time point by time point basis. 
 }
 \usage{
-erp.ttest.mbvadata.frame(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "topright", legy = ylim[2] * 0.9, type = c("within", "between"), cname, pat = "\\..")
+\method{t.test}{mbvadata.frame}(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "topright", legy = ylim[2] * 0.9, type = c("within", "between"), cname, pat = "\\..")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj1}{
-%%     ~~Describe \code{obj1} here~~
-}
-  \item{obj2}{
-%%     ~~Describe \code{obj2} here~~
+  \item{obj1, obj2}{
+mbvadata frames
 }
   \item{chan}{
-%%     ~~Describe \code{chan} here~~
+string or number indicating the channel from which the signals are compared
 }
-  \item{ylim}{
-%%     ~~Describe \code{ylim} here~~
-}
-  \item{xlim}{
-%%     ~~Describe \code{xlim} here~~
+  \item{ylim, xlim}{
+axes ranges
 }
   \item{alpha}{
-%%     ~~Describe \code{alpha} here~~
+alpha component of the color of the confidence region
 }
   \item{xdens}{
-%%     ~~Describe \code{xdens} here~~
+density of fill pattern of confidence interval
 }
   \item{cicolx}{
-%%     ~~Describe \code{cicolx} here~~
+color of confidence interval
 }
-  \item{legx}{
-%%     ~~Describe \code{legx} here~~
-}
-  \item{legy}{
-%%     ~~Describe \code{legy} here~~
+  \item{legx, legy}{
+legend coordinates. See \code{\link{legend}}.
 }
   \item{type}{
-%%     ~~Describe \code{type} here~~
+type of the comparison; either "within" or "between". (WILL CHANGE TO \code{pairwise} to match \code{t.test} better)
 }
   \item{cname}{
 %%     ~~Describe \code{cname} here~~
@@ -54,7 +46,7 @@ erp.ttest.mbvadata.frame(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05, xden
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The ERPs compared are plotted, along with the confidence interval of their difference centered around the average of the two. Significant differences are indicated along the x-axis with a \code{\link{rug}}.
 }
 \value{
 %%  ~Describe the value returned
@@ -156,5 +148,5 @@ function(obj1, obj2, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }
+\keyword{ htest }% __ONLY ONE__ keyword per line

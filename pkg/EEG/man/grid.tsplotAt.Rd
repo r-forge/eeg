@@ -14,59 +14,52 @@ grid.tsplotAt(ts, x, y, width, height, just = "centre", name, xlim = NA, ylim = 
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{ts}{
-%%     ~~Describe \code{ts} here~~
+\code{ts} object
 }
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{x}, \item{y}{
+coordinates for the centre of the viewport on the current
 }
-  \item{y}{
-%%     ~~Describe \code{y} here~~
-}
-  \item{width}{
-%%     ~~Describe \code{width} here~~
-}
-  \item{height}{
-%%     ~~Describe \code{height} here~~
+  \item{width}, \item{height}{
+dimensions of the viewport in which the signal is plotted
 }
   \item{just}{
-%%     ~~Describe \code{just} here~~
+justification of viewport relative to its (x,y) location. See \link[grid:viewport]{viewport}.
 }
   \item{name}{
-%%     ~~Describe \code{name} here~~
+optional name of the viewport in which the time series is to be plotted. If left unspecified, a new viewport is created at the indicated location. See also \link[grid:viewport]{viewport}.
 }
-  \item{xlim}{
-%%     ~~Describe \code{xlim} here~~
-}
-  \item{ylim}{
-%%     ~~Describe \code{ylim} here~~
+  \item{xlim, ylim}{
+range of the x- and y-axes in the viewport (ignored if \code{name} is specified).
 }
   \item{angle}{
-%%     ~~Describe \code{angle} here~~
+unused?
 }
   \item{add}{
-%%     ~~Describe \code{add} here~~
+should the plot be added to the existing plot?
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further parameters that are pased to \code{\link[grid:gpar]{gpar}}
 }
   \item{box}{
-%%     ~~Describe \code{box} here~~
+should a box be drawn around the plot?
 }
   \item{axes}{
-%%     ~~Describe \code{axes} here~~
+should the axes be ploted?
 }
   \item{ylab}{
-%%     ~~Describe \code{ylab} here~~
+y-axis label
 }
   \item{rot}{
-%%     ~~Describe \code{rot} here~~
+orientation of the y-axis label
 }
   \item{fontsize}{
-%%     ~~Describe \code{fontsize} here~~
+font size of the y-label and axes annotation
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function is intended for internal use.
+
+This function heavily relies on the \link[grid:grid-package]{grid} package.
 }
 \value{
 %%  ~Describe the value returned
@@ -79,7 +72,7 @@ grid.tsplotAt(ts, x, y, width, height, just = "centre", name, xlim = NA, ylim = 
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -88,12 +81,13 @@ grid.tsplotAt(ts, x, y, width, height, just = "centre", name, xlim = NA, ylim = 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[grid:grid-package]{grid}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+
 
 ## The function is currently defined as
 function(ts, x, y, width, height, just="centre", name, xlim=NA, ylim=NA,

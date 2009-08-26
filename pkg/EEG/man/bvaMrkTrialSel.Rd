@@ -3,10 +3,10 @@
 \alias{bvaMrkTrialSel}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+trial subset selection of markers data frame
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Create a marker data frame with only selected trials retained
 }
 \usage{
 bvaMrkTrialSel(mrk, trials)
@@ -14,27 +14,23 @@ bvaMrkTrialSel(mrk, trials)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{mrk}{
-%%     ~~Describe \code{mrk} here~~
+marker data frame (\code{marker} slot of \code{bvadata} object)
 }
   \item{trials}{
-%%     ~~Describe \code{trials} here~~
+numeric vector indicating the trials to be retained
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function is intended for internal use only
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+same marker data frame with unselected trials removed
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -49,6 +45,11 @@ bvaMrkTrialSel(mrk, trials)
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+pp01 = importBVA()
+bvaMrkTrialSel(pp01$marker, 1:5) # retains first 5 trials
+}
+
 
 ## The function is currently defined as
 function(mrk, trials){
@@ -64,5 +65,4 @@ function(mrk, trials){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

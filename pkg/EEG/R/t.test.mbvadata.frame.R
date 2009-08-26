@@ -3,16 +3,16 @@ function(obj1, obj2, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray
 	legy=ylim[2]*.9, type=c('within', 'between'), cname, pat="\\..")
 {
 	type = match.arg(type)
-	if(class(obj1)!=class(obj2)) 
+	if(any(class(obj1)!=class(obj2))) 
 		stop('not both of class %s', class(obj1))
-	M = unclass(obj1)$data[[1]]$mean
+	M = attr(obj1, "data")[[1]]$mean
 	time1 = time(M)
 	time2 = time(M)
 	if(!all.equal(time1, time2))
 		stop('Unequal times not implemented')
-	nms = names(unclass(obj1)$data[[1]]$mean[1,chan])
-	X1 = sapply(unclass(obj1)$data, function(x) x$mean[,chan])
-	X2 = sapply(unclass(obj2)$data, function(x) x$mean[,chan])
+	nms = names(attr(obj1,"data")[[1]]$mean[1,chan])
+	X1 = sapply(attr(obj1,"data"), function(x) x$mean[,chan])
+	X2 = sapply(attr(obj2,"data"), function(x) x$mean[,chan])
 	if(type=="within"){
 		if(missing(cname)){
 			nbr = max(ncol(X1), ncol(X2))
@@ -51,7 +51,7 @@ function(obj1, obj2, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray
 		ylim = range(xuci,xbci,xm,ym)
 	if(missing(xlim))
 		xlim = range(time1)
-	ylab = unlist(unclass(obj1)$data[[1]]$header$Chan)
+	ylab = unlist(attr(obj1,"data")[[1]]$header$Chan)
 	ylab = strsplit(ylab[pmatch('Cz', ylab)],",")[[1]][4]
 	timex = as.numeric(time1)
 	plot(timex, xm, type='l', col=2, lwd=3, xlim=xlim, ylim=ylim, xlab="Time", 
@@ -62,7 +62,11 @@ function(obj1, obj2, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray
 #	polygon(c(timex,rev(timex)), c(xuci,rev(xbci)), border=NA);
 	lines(timex, xm, col='white', lty=1, lwd=0.5)
 	lines(timex, ym, col='white', lty=1, lwd=0.5)
-	legend(legx,legy, c(deparse(substitute(obj1)),deparse(substitute(obj2))), col=2:3, lwd=3, lty=1)
+	if(all(c(class(substitute(obj1)),class(substitute(obj2)))!="mbvadata.frame"))
+		leg = c(deparse(substitute(obj1)),deparse(substitute(obj2)))
+	else
+		leg = c("first frame", "second frame")
+	legend(legx,legy, leg, col=2:3, lwd=3, lty=1)
 	stimes <- timex[pval<alpha]
 	rug(stimes[stimes>xlim[1] & stimes<xlim[2]])
 	invisible(data.frame(time=timex, t=tval, df=df, p.value=pval, conf.int=cis, mean=m, 

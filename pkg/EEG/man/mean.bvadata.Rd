@@ -3,41 +3,48 @@
 \alias{mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Compute Evoked/Event Related Potentials
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Compute the average signals across trials---i.e., compute the ERPs from a bvadata object.
 }
 \usage{
-mean.bvadata(obj, weights = 1, na.rm = TRUE)
+\method{mean}{bvadata}(obj, weights = 1, na.rm = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{
-%%     ~~Describe \code{obj} here~~
+bvadata object
 }
   \item{weights}{
-%%     ~~Describe \code{weights} here~~
+vector with the same number of weights as there are trials; the weighted average is used if specified
 }
   \item{na.rm}{
-%%     ~~Describe \code{na.rm} here~~
+currently ignored
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\code{mean.bvadata} object with components
+  \item{nsamp }{number of time samples for each signal}
+  \item{nchan }{number of channels/signals}
+  \item{ntrial }{number of trials }
+  \item{sum.x }{\code{nsamp}-by-\code{nchan} matrix with signals summed across trials }
+  \item{sum.x2 }{\code{nsamp}-by-\code{nchan} matrix with squared signals summed across trials }
+  \item{n }{\code{nsamp}-by-\code{nchan} matrix with the number of trials on which \code{sum.x} and \code{sum.x2} are based. This can be different for each sample in each channel due to missing values or bad channels}
+  \item{stimindx, sigmindx, time0indx}{mainly for compatibility with \code{\link[importBVA]{bvadata}} objects}
+  \item{file}{file name on which the average is based}
+  \item{header}{see \code{\link[importBVA]{bvadata}} }
+  \item{mean}{\code{nsamp}-by-\code{nchan} matrix across trials signal averages (i.e., the ERPs)}
+  \item{sd}{\code{nsamp}-by-\code{nchan} matrix with the across trials signal standard deviations }
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -86,5 +93,4 @@ function(obj, weights=1, na.rm=TRUE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

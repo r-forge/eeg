@@ -1,20 +1,24 @@
 \name{print.bvadata}
 \Rdversion{1.1}
 \alias{print.bvadata}
+\alias{print.mean.bvadata}
+\alias{print.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Console display of bvadata objects
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Print basic info about bvadata, mean.bvadata, and mbvadata.frame objects
 }
 \usage{
-print.bvadata(x, ...)
+\method{print}{bvadata}(x, ...)
+\method{print}{mean.bvadata}(x, ...)
+\method{print}{mbvadata.frame}(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+bvadata object
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
@@ -34,7 +38,7 @@ print.bvadata(x, ...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -43,7 +47,7 @@ print.bvadata(x, ...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{print}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -58,5 +62,4 @@ function(x, ...) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ print }

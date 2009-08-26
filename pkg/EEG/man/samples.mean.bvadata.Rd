@@ -1,33 +1,33 @@
 \name{samples.mean.bvadata}
 \Rdversion{1.1}
+\alias{timeindx}
+\alias{samples}
 \alias{samples.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Epoch samples
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Returns the time sample indices of the times in \code{times}, or between \code{from} and \code{to}
 }
 \usage{
-samples.mean.bvadata(x, times, from = start(x$mean), to = end(x$mean))
+\method{samples}{mean.bvadata}(x, times, from = start(x$mean), to = end(x$mean))
+timeindx(x, start, end)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+time series like object or \code{mean.bvadata} object
 }
   \item{times}{
-%%     ~~Describe \code{times} here~~
+vector of times for which the time sample indices need to be found
 }
-  \item{from}{
-%%     ~~Describe \code{from} here~~
-}
-  \item{to}{
-%%     ~~Describe \code{to} here~~
+  \item{from, to}{
+alternatively, begin time of epoch and end time of epoch for which the time samples need to be found
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+There's no difference between \code{samples} and \code{timeindx} except for the \code{times} alternative in \code{samples}
 }
 \value{
 %%  ~Describe the value returned
@@ -40,7 +40,7 @@ samples.mean.bvadata(x, times, from = start(x$mean), to = end(x$mean))
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -70,5 +70,5 @@ function(x, times, from=start(x$mean), to=end(x$mean))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ utilities }% __ONLY ONE__ keyword per line

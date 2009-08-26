@@ -1,29 +1,31 @@
 \name{[.bvadata}
 \Rdversion{1.1}
 \alias{[.bvadata}
+\alias{[.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Extract subsets of bvadata
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Extract trials, channels and/or samples from a bvadata/mean.bvadata object
 }
 \usage{
-[.bvadata(x, sample = NA, channel = NA, trial = NA)
+\method{[}{bvadata}(x, sample = NA, channel = NA, trial = NA)
+\method{[}{mean.bvadata}(x, samp = 1:x$nsamp, chan = 1:x$nchan, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+bvadata object
 }
   \item{sample}{
-%%     ~~Describe \code{sample} here~~
+optional vector with indices of the samples to be selected
 }
   \item{channel}{
-%%     ~~Describe \code{channel} here~~
+optional vector with indices of the channels to be selected
 }
   \item{trial}{
-%%     ~~Describe \code{trial} here~~
+optional vector with indices of the trials to be selected
 }
 }
 \details{
@@ -40,7 +42,7 @@
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -49,9 +51,12 @@
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{importBVA}}, ~~~
 }
 \examples{
+pp01 = importBVA()
+pp01.subset = pp01[,,-(1:10)] # remove first 10 trials
+
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
@@ -100,5 +105,5 @@ function(x, sample=NA,channel=NA,trial=NA)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }

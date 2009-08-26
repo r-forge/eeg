@@ -3,65 +3,56 @@
 \alias{eeg.plot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Topographically arranged ERP traces plot
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plots ERP traces in a topographically arrangment
 }
 \usage{
-eeg.plot(obj, ..., xlim = NA, ylim = NA, add = FALSE, width = 0.1, height = width/2, fontsize = 7, label = TRUE, axes = FALSE, na.rm = TRUE)
+eeg.plot(obj, ..., xlim = NA, ylim = NA, add = FALSE, width = 0.1, height = width/2, 
+	fontsize = 7, label = TRUE, axes = FALSE, na.rm = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{
-%%     ~~Describe \code{obj} here~~
+a \code{bvadata} object or a \code{mean.bvadata} object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+graphical parameters that are passed to \code{\link{grid.tsplotAt}}
 }
-  \item{xlim}{
-%%     ~~Describe \code{xlim} here~~
-}
-  \item{ylim}{
-%%     ~~Describe \code{ylim} here~~
+  \item{xlim, ylim}{
+ranges of the x- and y-axis for each ERP trace
 }
   \item{add}{
-%%     ~~Describe \code{add} here~~
+should the plot be added to the existing plot?
 }
-  \item{width}{
-%%     ~~Describe \code{width} here~~
-}
-  \item{height}{
-%%     ~~Describe \code{height} here~~
+  \item{width, height}{
+dimension of each ERP graph viewport 
 }
   \item{fontsize}{
-%%     ~~Describe \code{fontsize} here~~
+font size used in graph annotation
 }
   \item{label}{
-%%     ~~Describe \code{label} here~~
+should each ERP trace be labeled with the electrode name?
 }
   \item{axes}{
-%%     ~~Describe \code{axes} here~~
+logical, numeric vector or character vector. If \code{TRUE} the axes are plotted for each trace. If a vector the entries are used to decide for which of the channels the axes are plotted.
 }
   \item{na.rm}{
-%%     ~~Describe \code{na.rm} here~~
+should \code{NA}'s be removed before averaging? NOT YET IMPLEMENTED
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+If \code{obj} is a \code{bvadata} object, the mean ERP is computed across trials before plotting.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+the outer viewport on which the traces were plotted is returned
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -76,6 +67,11 @@ eeg.plot(obj, ..., xlim = NA, ylim = NA, add = FALSE, width = 0.1, height = widt
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+pp01 = importBVA()
+eeg.plot(pp01[,,1:30], fontsize=5, axes=c('Cz','Pz','F_re_force'))
+eeg.plot(pp01[,,31:60], col='red', add=TRUE)
+}
 
 ## The function is currently defined as
 function(obj, ..., xlim=NA, ylim=NA, add=FALSE, width=.10, height=width/2, fontsize=7, 
@@ -115,5 +111,5 @@ function(obj, ..., xlim=NA, ylim=NA, add=FALSE, width=.10, height=width/2, fonts
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ hplot }
+\keyword{ aplot }

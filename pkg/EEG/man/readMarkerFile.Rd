@@ -3,10 +3,10 @@
 \alias{readMarkerFile}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Read Brain Vision Analyzer Marker file
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Read Brain Vision Analyzer Marker file
 }
 \usage{
 readMarkerFile(file, what = 3, keep.names = FALSE)
@@ -14,7 +14,7 @@ readMarkerFile(file, what = 3, keep.names = FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{file}{
-%%     ~~Describe \code{file} here~~
+file name
 }
   \item{what}{
 %%     ~~Describe \code{what} here~~
@@ -40,13 +40,13 @@ readMarkerFile(file, what = 3, keep.names = FALSE)
 %%  ~~who you are~~
 }
 \note{
-%%  ~~further notes~~
+Intended for internal use only
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{importBVA}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -71,5 +71,4 @@ function(file, what=3, keep.names = FALSE)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

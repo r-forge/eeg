@@ -3,10 +3,10 @@
 \alias{hotellings}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Hotelling's T2 test on mean vector of multivariate data
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Hotelling's T2 test on mean vector of multivariate data.
 }
 \usage{
 hotellings(data, mu = rep(0, NCOL(data)), print = TRUE)
@@ -14,44 +14,50 @@ hotellings(data, mu = rep(0, NCOL(data)), print = TRUE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{
-%%     ~~Describe \code{data} here~~
+data frame or matrix with all numeric variables
 }
   \item{mu}{
-%%     ~~Describe \code{mu} here~~
+value of the mean vector according to the null hypothesis
 }
   \item{print}{
-%%     ~~Describe \code{print} here~~
+should the result be printed?
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Hotelling's T2 test for a single group mean vector, and posthoc t-test on individual variables.
+
+The p-values are not corrected for multiple comparisons.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+List with components
+\item{Hotelings.T2 }{Value of the statistic}
+\item{Exact.F }{F-value corresponding to the statistic}
+\item{Hyp.df }{Hypothesis degrees of freedom}
+\item{Err.df }{Error degrees of freedom}
+\item{Signif. }{P-value}
+\item{posthoc }{Table of posthoc t-tests.}
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
+\section{Warning }{This function is better not used for regular analysis. 
+The Hotelling's T2 is correct, but there are better procedures for the posthoc analysis.}
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+data = matrix(rnorm(5*30),,5)
+hotellings(data)
+
 
 ## The function is currently defined as
 function(data,mu=rep(0,NCOL(data)),print=TRUE){
@@ -88,5 +94,6 @@ function(data,mu=rep(0,NCOL(data)),print=TRUE){
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ utilities }
+\keyword{ htest }
+\keyword{ multivariate }% __ONLY ONE__ keyword per line

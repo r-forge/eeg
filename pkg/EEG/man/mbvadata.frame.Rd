@@ -3,10 +3,10 @@
 \alias{mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Mean BVA Data Frame
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function creates an mbvadata.frame, which collect multiple mean.bvadata object into a single frame along with other tightly couples variables such as experimental design factors.
 }
 \usage{
 mbvadata.frame(...)
@@ -14,14 +14,14 @@ mbvadata.frame(...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+mean.bvadata objects
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+A \code{mbvadata.frame} is a \code{data.frame} like object that behaves similarly, but not identically.
 }
 \value{
-%%  ~Describe the value returned
+\code{mbvadata.frame}
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -31,7 +31,7 @@ mbvadata.frame(...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -40,31 +40,11 @@ mbvadata.frame(...)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[mean.mbvadata.frame]{mean}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function(...)
-{
-	args = list(...)
-	nms = names(args)
-	nms[nms==""] = paste("V",1:length(args),sep="")[nms==""]
-	names(args) = nms
-	mbva.data = args[[1]]
-	if(!all(sapply(mbva.data,class)=="mean.bvadata"))
-		stop('first argument should be mean.bvadata list')
-	arg1 = list(names(mbva.data)) 
-	names(arg1) = names(args)[1]
-	df = do.call("data.frame", c(arg1, args[-1]))
-	row.names(df) = names(mbva.data)
-	structure(list(df=df, data.nm = names(arg1)[1], data = mbva.data), class="mbvadata.frame")
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

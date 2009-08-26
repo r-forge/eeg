@@ -3,10 +3,10 @@
 \alias{manova.reshape}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Reshape a data frame for a MANOVA or repeated measures (M)ANOVA
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Reshape a data frame to the proper form for a (repeated measures) (M)ANOVA with \code{lm}
 }
 \usage{
 manova.reshape(data, idvar, factors, v.names)
@@ -14,33 +14,30 @@ manova.reshape(data, idvar, factors, v.names)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{
-%%     ~~Describe \code{data} here~~
+the data frame
 }
   \item{idvar}{
-%%     ~~Describe \code{idvar} here~~
+the name of the variable in \code{data} that identifies the units of observation 
+(cases, subjects, plots, etc.)
 }
   \item{factors}{
-%%     ~~Describe \code{factors} here~~
+a vector of names of (experimental) design factors in \code{data} whos combinations of values define a measurement/variable
 }
   \item{v.names}{
-%%     ~~Describe \code{v.names} here~~
+a vector of new names to be given to the measurements/variables. If left unspecified, the values of the \code{factors} are used to define a name
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+a data frame with the data in \code{data} reorganized in columns
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -52,9 +49,13 @@ manova.reshape(data, idvar, factors, v.names)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+level = c('easy','medium','diff')
+task  = c('discrim','detect')
+resp  = c('correct','error')
+subj  = 1:7
+df = expand.grid(subj=subj, task=task, level=level, resp=resp)
+df$mrt = round(rnorm(nrow(df), 300, 20))
+manova.reshape(df, 'subj', c ('task','level','resp'))
 
 ## The function is currently defined as
 function (data, idvar, factors, v.names) 
@@ -70,5 +71,4 @@ function (data, idvar, factors, v.names)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }

@@ -1,40 +1,52 @@
 \name{$.mbvadata.frame}
 \Rdversion{1.1}
+\alias{[.mbvadata.frame}
 \alias{$.mbvadata.frame}
+\alias{$<-.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Extract or replace subsets of mbvadata.frames.
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Extract or replace subsets of mbvadata.frames.
 }
 \usage{
-$.mbvadata.frame(x, name)
+\method{[}{mbvadata.frame}(x, rows, cols)
+\method{$}{mbvadata.frame}(x, name)
+\method{$<-}{mbvadata.frame}(x, name, value)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+mbvadata frame
+}
+  \item{rows}{
+optional vector with indices of the samples to be selected
+}
+  \item{cols}{
+optional vector with indices of the channels to be selected
 }
   \item{name}{
-%%     ~~Describe \code{name} here~~
+elements to extract or replace
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Works basically the same as for data frames.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+If the column that specifies the mean.bvadata object names is selected only, a list of the mean.bvadata objects is returnd (not the vector with the names), unless \code{drop=FALSE} is specified as a first argument. 
+
+If the a single element from the mean.bvadata object column is selected, the corresponding mean.bvadata object is returned.
+
+The \code{$} returns a vector of the values in any of the columns indicated by \code{name}, except if \code{name} selects the column that contains the mean.bvadata objects, then it returns a list with these objects.
+
+In all other cases, a mbvadata.frame is returned.
 }
 \references{
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~
@@ -43,7 +55,7 @@ $.mbvadata.frame(x, name)
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{importBVA}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -64,5 +76,5 @@ function(x, name)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }
