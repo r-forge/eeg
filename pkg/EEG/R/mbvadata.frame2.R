@@ -143,7 +143,7 @@ function(x, ...)
 	data = attr(x, "data")
 	z = data[[1]]
 	for(i in 2:length(data)) z = z + data[[i]]
-	z / length(x)
+	z # do not divide by length(data): mean is calculated using trial counts
 }
 
 print.mbvadata.frame <- function(x, ...) { class(x) <- "data.frame"; NextMethod("print");}
