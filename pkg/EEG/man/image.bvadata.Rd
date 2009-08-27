@@ -11,7 +11,7 @@ Function to plot potential distribution topographies of ERPs.
 }
 \usage{
 \method{image}{bvadata}(x, ...)
-\method{image}{mean.bvadata}(x, ...)
+%\method{image}{mean.bvadata}(x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

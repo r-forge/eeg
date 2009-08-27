@@ -26,6 +26,9 @@ optional vector with indices of the samples to be selected
   \item{cols}{
 optional vector with indices of the channels to be selected
 }
+  \item{drop}{
+logical. When \code{FALSE}, an \code{mbvdata.frame} is always returned
+}
   \item{name}{
 elements to extract or replace
 }

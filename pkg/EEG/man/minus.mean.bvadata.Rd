@@ -1,8 +1,10 @@
-\name{-.mean.bvadata}
+\name{Ops.mean.bvadata}
 \Rdversion{1.1}
-\alias{-.mean.bvadata}
+%\alias{-.mean.bvadata}
+\alias{+.mean.bvadata}
 \alias{*.mean.bvadata}
 \alias{/.mean.bvadata}
+\alias{Ops.mean.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Algebra of mean bvadata objects
@@ -11,10 +13,10 @@ Algebra of mean bvadata objects
 Algebra operations on mean bvadata objects
 }
 \usage{
--.mean.bvadata(a, b)
-+.mean.bvadata(a, b)
-*.mean.bvadata(a, b)
-/.mean.bvadata(a, b)
+%\method{-}{mean.bvadata}(a, b)
+\method{+}{mean.bvadata}(a, b)
+\method{*}{mean.bvadata}(a, b)
+\method{/}{mean.bvadata}(a, b)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -32,7 +34,7 @@ a number and a \code{mean.bvadata} object for \code{*}, \code{b} a scalar for \c
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
 \note{
 %%  ~~further notes~~

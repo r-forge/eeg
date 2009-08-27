@@ -8,4 +8,4 @@ Maintainer: Raoul Grasman <rgrasman@uva.nl>, Wouter Weeda <w.d.weeda1@uva.nl>
 Description: This package reads in single trial EEG (currently only ascii-exported preprocessed and trial segmented in Brain Vision Analyzer), computes averages (i.e., ERP's) and stores ERP's from multiple data sets in a data.frame like object, such that statistical analysis (linear model, (M)ANOVA) can be done using the familiar R modeling frame work.
 License: GPL v. 2 or higher (at your choice)
 LazyLoad: yes
-Depends: lattice
+Depends: grid

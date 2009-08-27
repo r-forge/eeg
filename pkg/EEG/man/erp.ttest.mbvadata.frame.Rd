@@ -10,7 +10,10 @@ Time sample-wise t-tests for ERPs
 Function to do a pairwise comparison between two mvbadata.frames on a time point by time point basis. 
 }
 \usage{
-\method{t.test}{mbvadata.frame}(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "topright", legy = ylim[2] * 0.9, type = c("within", "between"), cname, pat = "\\..")
+\method{t.test}{mbvadata.frame}(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05,
+                 xdens = NULL, cicolx = "gray", legx = "topright", legy
+                 = ylim[2] * 0.9, type = c("within", "between"), cname,
+                 pat = "\\..")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

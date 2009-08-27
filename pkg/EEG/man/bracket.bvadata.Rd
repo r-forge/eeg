@@ -18,14 +18,17 @@ Extract trials, channels and/or samples from a bvadata/mean.bvadata object
   \item{x}{
 bvadata object
 }
-  \item{sample}{
+  \item{sample, samp}{
 optional vector with indices of the samples to be selected
 }
-  \item{channel}{
+  \item{channel, chan}{
 optional vector with indices of the channels to be selected
 }
   \item{trial}{
 optional vector with indices of the trials to be selected
+}
+  \item{...}{
+unused (?)
 }
 }
 \details{

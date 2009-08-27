@@ -11,6 +11,11 @@ function(path, pat = "\\.vhdr$",
 	cat(length(enms)," data sets found.\n")
 	if(length(enms)>0)
 		cat("Importing...","\n")
-	lapply(enms, function(f){cat(f,"\n"); flush.console(); importBVA(f); })
+	lapply(enms, function(f){
+		i = which(f==enms)[1]
+		cat(f," (", round(100*i/length(enms)), "%)\n"); 
+		flush.console(); 
+		try(importBVA(f)); 
+	})
 }
 

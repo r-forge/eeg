@@ -9,7 +9,9 @@ Batch import EEG data sets exported from Brain Vision Analyzer
 Import multiple BVA exported EEG data sets in a folder based on a filter pattern.
 }
 \usage{
-batchImportBVA(path, pat = "\\.vhdr$", nm.pat = "^(.).(\\d{2}).{4}([a-z]{2,3}).([a-z]{3}).([a-z]).+vhdr", newnm.pat = paste(paste("\\", 1:nc, sep = ""), collapse = "."))
+batchImportBVA(path, pat = "\\.vhdr$",
+		nm.pat="^(.).(\\d{2}).{4}([a-z]{2,3}).([a-z]{3}).([a-z]).+vhdr",
+		newnm.pat=paste(paste("\\",1:nc,sep=""),collapse="."))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
