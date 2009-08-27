@@ -11,7 +11,7 @@ Extract or replace subsets of mbvadata.frames.
 Extract or replace subsets of mbvadata.frames.
 }
 \usage{
-\method{[}{mbvadata.frame}(x, rows, cols)
+\method{[}{mbvadata.frame}(x, rows, cols, drop = TRUE)
 \method{$}{mbvadata.frame}(x, name)
 \method{$<-}{mbvadata.frame}(x, name, value)
 }

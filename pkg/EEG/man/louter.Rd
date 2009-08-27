@@ -48,9 +48,11 @@ Raoul Grasman
 \code{\link[base:outer]{outer}}
 }
 \examples{
-\code{outer(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b)))} 
+\dontrun{
+outer(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b))) 
 # gives an error, whereas
-\code{louter(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b)))} 
+}
+louter(as.list(letters[1:5]), as.list(1:4), function(a,b)as.formula(paste(a,"~",b)))
 # returns as expected
 
 ## The function is currently defined as

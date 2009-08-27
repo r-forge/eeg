@@ -13,7 +13,7 @@ c.bvadata(x, y, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}, \item{y}, \item{\dots}{
+  \item{x, y, \dots}{
 	bvadata objects
 }
 }

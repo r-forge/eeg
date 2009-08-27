@@ -54,8 +54,10 @@ Raoul Grasman
 \code{\link{importBVA}}, ~~~
 }
 \examples{
+\dontrun{
 pp01 = importBVA()
 pp01.subset = pp01[,,-(1:10)] # remove first 10 trials
+}
 
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,

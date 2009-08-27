@@ -28,7 +28,7 @@ Maintainer: Raoul Grasman <rgrasman@uva.nl>
 \references{
 %%~~ Literature or other references for background information ~~
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
+%%~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \seealso{
 \code{\link{names2factors}}, \code{\link{importBVA}}, \code{\link{batchImportBVA}}, 
@@ -36,6 +36,7 @@ Maintainer: Raoul Grasman <rgrasman@uva.nl>
 %%~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
+\dontrun{
 pp01prdec = importBVA("./bva_export/PP01_MA_Pi_RDE_correct.vhdr")
 plot(pp01prdec[,1:10,]) # ts.plot of average accross trials (the ERP) of 10 channels
 plot(pp01prdec[,c('Fz', 'Cz', 'Pz', 'Oz'), 20:30]) # plot of average across trials 20...30
@@ -74,4 +75,5 @@ mbva.erp = rbind(mbva.erp.c, mbva.erp.e)
 # convert to regular data.frame 
 df = as.data.frame(mbva.erp, from=85, to=115, chan='Cz') # from and to in data set time units (msec, sec) 
 head(df)
+}
 }

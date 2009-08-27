@@ -3,10 +3,10 @@
 \alias{grid.tsplotAt}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Plot time series in a grid viewport
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plot time series in a grid viewport
 }
 \usage{
 grid.tsplotAt(ts, x, y, width, height, just = "centre", name, xlim = NA, ylim = NA, angle = 0, add = FALSE, ..., box = FALSE, axes = FALSE, ylab = "", rot = 90, fontsize = 7)
@@ -16,10 +16,10 @@ grid.tsplotAt(ts, x, y, width, height, just = "centre", name, xlim = NA, ylim = 
   \item{ts}{
 \code{ts} object
 }
-  \item{x}, \item{y}{
+  \item{x, y}{
 coordinates for the centre of the viewport on the current
 }
-  \item{width}, \item{height}{
+  \item{width, height}{
 dimensions of the viewport in which the signal is plotted
 }
   \item{just}{
@@ -122,5 +122,4 @@ function(ts, x, y, width, height, just="centre", name, xlim=NA, ylim=NA,
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ aplot }

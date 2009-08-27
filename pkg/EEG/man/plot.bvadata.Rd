@@ -48,7 +48,7 @@ Only 10 channels can be plot simultaneously; see \code{\link[plot.ts]{plot}}
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
- \code{\link[plot.ts]{plot}}, \code{\link[as.ts.bvadata]{as.ts}
+ \code{\link[plot.ts]{plot}}, \code{\link[as.ts.bvadata]{as.ts}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

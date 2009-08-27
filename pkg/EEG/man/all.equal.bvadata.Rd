@@ -13,7 +13,7 @@ all.equal.bvadata(x, y, important, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}, \item{y}{
+  \item{x, y}{
 objects of class \code{bvadata}
 }
   \item{important}{

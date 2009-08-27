@@ -3,12 +3,12 @@
 \alias{names2factors}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
+	Decode design factors from names
+}
+\description{
 This function takes a vector of (e.g. file-)names that uses a fixed scheme to 
 encode a factorial design and returns a data frame with the factors decoded
 This is useful for filenames which encode specific data
-}
-\description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 names2factors(nams, formula, sep = ".", ...)
@@ -67,7 +67,7 @@ Raoul Grasman
 	nams <- c("PP01_ME_Pi_LDE-error.dat", "PP02_SK_PI_RDE-correct.dat", "PP03_CB_PI_LDD-correct.dat",  "PP04_AB_DRF_LDM-error.dat")
 	# could be e.g.: nams <- dir(pat=".dat")
 	nams <- gsub("[-.]","_",nams)        # turn '.' and '-' into separator '_'
-	names2factors(blo, ~ subj + initials + task + stim:level + resp + dummy, sep="_")
+	names2factors(nams, ~ subj + initials + task + stim:level + resp + dummy, sep="_")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
