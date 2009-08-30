@@ -1,5 +1,6 @@
 print.mean.bvadata <-
-function(x, ...)
+function(x, ..., digits = NULL, quote = FALSE, right = TRUE,
+                 row.names = TRUE)
 {
 	fnames = strsplit(x$file,"\\+")[[1]]
 	cat("file: ", paste("\n", fnames),"\n");
