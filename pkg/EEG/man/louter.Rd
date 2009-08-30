@@ -32,15 +32,15 @@ further arguments passed to \code{FUN}
 \value{
 a (generalized) matrix
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -13,53 +13,47 @@ t.testERPplot(x, y, i = 2, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{x, y}{
+\code{bvadata} or \code{mean.bvadata} objects
 }
   \item{i}{
-%%     ~~Describe \code{i} here~~
+channel that needs to be plotted
 }
   \item{alpha}{
-%%     ~~Describe \code{alpha} here~~
+?
 }
   \item{xdens}{
-%%     ~~Describe \code{xdens} here~~
+density of hatch marks confidence interval for \code{x}
 }
   \item{cicolx}{
-%%     ~~Describe \code{cicolx} here~~
+fill color confidence interval for \code{x}
 }
-  \item{legx}{
-%%     ~~Describe \code{legx} here~~
-}
-  \item{legy}{
-%%     ~~Describe \code{legy} here~~
+  \item{legx, legy}{
+legend x and y coordinates
 }
   \item{type}{
-%%     ~~Describe \code{type} here~~
+"between" or "within" comparison in t-test?
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Probably OBSOLETE or may change drastically
 }
-\value{
+%\value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{
+%}
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -45,15 +45,15 @@ The \code{$} returns a vector of the values in any of the columns indicated by \
 
 In all other cases, a mbvadata.frame is returned.
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -64,6 +64,11 @@ Raoul Grasman
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+data(gavgs)
+all(gavgs[,'task'] == gavgs$task) # TRUE
+}
+
 
 ## The function is currently defined as
 function(x, name)

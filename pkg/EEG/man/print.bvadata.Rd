@@ -11,9 +11,9 @@ Console display of bvadata objects
 Print basic info about bvadata, mean.bvadata, and mbvadata.frame objects
 }
 \usage{
-\method{print}{bvadata}(x, ...)
-\method{print}{mean.bvadata}(x, ...)
-\method{print}{mbvadata.frame}(x, ...)
+\method{print}{bvadata}(x, ..., digits = NULL, quote = FALSE, right = TRUE, row.names = TRUE)
+\method{print}{mean.bvadata}(x, ..., digits = NULL, quote = FALSE, right = TRUE, row.names = TRUE)
+\method{print}{mbvadata.frame}(x, ..., digits = NULL, quote = FALSE, right = TRUE, row.names = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -21,28 +21,31 @@ Print basic info about bvadata, mean.bvadata, and mbvadata.frame objects
 bvadata object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments
+}
+  \item{digits, quote, right, row.names}{
+see \code{\link{print}}
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
-\value{
+%}
+%\value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{
+%}
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

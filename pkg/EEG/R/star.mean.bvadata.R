@@ -13,7 +13,7 @@ function(a,b)
 	a
 }
 
-`\.mean.bvadata` <-
+`\\.mean.bvadata` <-
 function(a,b)
 {
 	if(class(b)=="mean.bvadata"){

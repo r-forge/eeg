@@ -17,9 +17,9 @@ importBVA(file = file.choose())
 name of the header file ('.vhdr') to be imported
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 \code{bvadata} object with components
 \item{x }{a function that accepts no arguments and returns the raw data array}
@@ -37,21 +37,21 @@ channels and samples across the selected trials using \code{\link{apply}}.}
 \item{markers}{a data frame containing the marker file information}
 \item{header}{a list structure that contains all information from the header file of the data set}
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 \dontrun{
 pp01 = importBVA() # pin point to the .vhdr file of the data set in the finder window

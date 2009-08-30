@@ -23,22 +23,22 @@ should feedback be printed on console?
 \details{
 OBSOLETE use \code{\link[mean.bvadata]{mean}} on \code{bvadata} objects and \code{\link{mbvadata.frame}} to bind them together for further analysis.
 }
-\value{
+%\value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{
+%}
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 \section{Warning }{This function is OBSOLETE. DO NOT USE IT. TO BE REMOVED.}

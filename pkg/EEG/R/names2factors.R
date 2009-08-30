@@ -47,7 +47,13 @@ function(nams, formula, sep=".", ...){
 		rownames(r) = v;
 		colnames(r) = nams
 		data.frame(t(r));
-	} else r
+	} else {
+		r = as.factor(r)
+		names(r) = nams
+		r = list(list(r))
+		names(r) = v
+		r
+	}
 }
 
 

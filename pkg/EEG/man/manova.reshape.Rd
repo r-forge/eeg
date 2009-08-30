@@ -27,26 +27,26 @@ a vector of names of (experimental) design factors in \code{data} whos combinati
 a vector of new names to be given to the measurements/variables. If left unspecified, the values of the \code{factors} are used to define a name
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 a data frame with the data in \code{data} reorganized in columns
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{reshape}}
 }
 \examples{
 level = c('easy','medium','diff')

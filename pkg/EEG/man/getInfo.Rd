@@ -24,31 +24,36 @@ name of the node whose value has to be retrieved
 Inefficient recursive implementation
 }
 \value{
+R object; the value of the sought node
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+
+tree = list(a=1, b=list(A=list(I="string", II=1:5, III=letters), B=matrix(1:9,3)), c=LETTERS)
+getInfo(tree,'II')
+getInfo(tree,'B')
 
 ## The function is currently defined as
 function(x,what){if(length(x)==1) NULL else if(what \%in\% names(x)) x[[what]] else do.call("c",sapply(x,getInfo,what=what))}

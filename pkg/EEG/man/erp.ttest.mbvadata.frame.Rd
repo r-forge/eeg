@@ -51,27 +51,27 @@ type of the comparison; either "within" or "between". (WILL CHANGE TO \code{pair
 \details{
 The ERPs compared are plotted, along with the confidence interval of their difference centered around the average of the two. Significant differences are indicated along the x-axis with a \code{\link{rug}}.
 }
-\value{
+%\value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
-\references{
+%}
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{eeg.plot}}, \code{\link{compERPplot}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

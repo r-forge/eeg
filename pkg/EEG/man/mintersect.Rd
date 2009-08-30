@@ -23,15 +23,15 @@ vectors (of the same mode) containing a sequence of items (conceptually) with no
 \value{
 A vector of the same mode as the imput vectors
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

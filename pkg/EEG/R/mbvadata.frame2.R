@@ -1,3 +1,21 @@
+aggregate.mbvadata.frame <-
+function(x, by, FUN, ..., attach.errors=TRUE){
+	tmp = split(x, by)
+	tmp = tmp[sapply(tmp, nrow)>0]
+	vnam = paste("V",1:NCOL(by),sep="")
+	nams = if(is.null(names(by))) vnam else names(by)
+	nams = ifelse(nams=="", vnam, nams)
+	ftmp = lapply(tmp, function(x) try(FUN(x,...)))
+	iserror = sapply(ftmp, class)=='try-error'
+	errors = ftmp[iserror]
+	ftmp = ftmp[!iserror]
+	fnams = names(ftmp)
+	frm = as.formula(paste("~",nams,collapse="+"))
+	mbva = mbvadata.frame(ftmp, names2factors(fnams, frm))
+	attr(mbva, "errors") = errors
+	mbva
+}
+
 
 
 
@@ -141,8 +159,8 @@ function(x, ...)
 {
 	class(x)  = "data.frame"
 	data = attr(x, "data")
-	z = data[[1]]
-	for(i in 2:length(data)) z = z + data[[i]]
+	if(!is.null(data) && length(data)>0)  z = data[[1]] else z = NULL
+	if(length(data)>1) for(i in 2:length(data)) z = z + data[[i]]
 	z # do not divide by length(data): mean is calculated using trial counts
 }
 

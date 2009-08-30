@@ -1,6 +1,6 @@
 \name{Ops.mean.bvadata}
 \Rdversion{1.1}
-%\alias{-.mean.bvadata}
+\alias{-.mean.bvadata}
 \alias{+.mean.bvadata}
 \alias{*.mean.bvadata}
 \alias{/.mean.bvadata}
@@ -13,10 +13,10 @@ Algebra of mean bvadata objects
 Algebra operations on mean bvadata objects
 }
 \usage{
-%\method{-}{mean.bvadata}(a, b)
+\method{-}{mean.bvadata}(a, b)
 \method{+}{mean.bvadata}(a, b)
 \method{*}{mean.bvadata}(a, b)
-\method{/}{mean.bvadata}(a, b)
+%\method{/}{mean.bvadata}(a, b)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -24,31 +24,39 @@ Algebra operations on mean bvadata objects
 a number and a \code{mean.bvadata} object for \code{*}, \code{b} a scalar for \code{/}; two mean.bvadata objects for \code{+} and \code{-}
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 \code{mean.bvadata} object
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
 \note{
-%%  ~~further notes~~
+DIVISION IS NOT YET IMPLEMENTED
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+
+\dontrun{
+data(gavgs)
+a = gavgs[1,1] # mean.bvadata object
+b = gavgs[2,1] 
+
+eeg.plot(a+3*b)
+}
 
 ## The function is currently defined as
 function(a,b)

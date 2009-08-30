@@ -9,11 +9,11 @@ Compute Evoked/Event Related Potentials
 Compute the average signals across trials---i.e., compute the ERPs from a bvadata object.
 }
 \usage{
-\method{mean}{bvadata}(obj, weights = 1, na.rm = TRUE)
+\method{mean}{bvadata}(x, weights = 1, na.rm = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj}{
+  \item{x}{
 bvadata object
 }
   \item{weights}{
@@ -23,9 +23,9 @@ vector with the same number of weights as there are trials; the weighted average
 currently ignored
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 \code{mean.bvadata} object with components
   \item{nsamp }{number of time samples for each signal}
@@ -40,25 +40,31 @@ currently ignored
   \item{mean}{\code{nsamp}-by-\code{nchan} matrix across trials signal averages (i.e., the ERPs)}
   \item{sd}{\code{nsamp}-by-\code{nchan} matrix with the across trials signal standard deviations }
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+data(gavgs)
+x = gavgs[1,1]
+class(x) # == 'mean.bvadata'
+eeg.plot(x)
+}
 
 ## The function is currently defined as
 function(obj, weights=1, na.rm=TRUE)

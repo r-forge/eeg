@@ -48,20 +48,20 @@ If \code{obj} is a \code{bvadata} object, the mean ERP is computed across trials
 \value{
 the outer viewport on which the traces were plotted is returned
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{compERPplot}}, \code{\link[t.test.mbvadata.frame]{t.test}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -71,6 +71,8 @@ Raoul Grasman
 pp01 = importBVA()
 eeg.plot(pp01[,,1:30], fontsize=5, axes=c('Cz','Pz','F_re_force'))
 eeg.plot(pp01[,,31:60], col='red', add=TRUE)
+grid.text("First vs. Second Half of Trials",y=unit(0.95,"npc")) # add a title
+
 }
 
 ## The function is currently defined as

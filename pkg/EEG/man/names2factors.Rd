@@ -48,26 +48,26 @@ In this case, the segment \code{"LDD"} would be split into \code{"LD"} and \code
 \value{
 A data frame with factors in columns whose names are the variable names in the formula.
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
-	nams <- c("PP01_ME_Pi_LDE-error.dat", "PP02_SK_PI_RDE-correct.dat", "PP03_CB_PI_LDD-correct.dat",  "PP04_AB_DRF_LDM-error.dat")
-	# could be e.g.: nams <- dir(pat=".dat")
-	nams <- gsub("[-.]","_",nams)        # turn '.' and '-' into separator '_'
-	names2factors(nams, ~ subj + initials + task + stim:level + resp + dummy, sep="_")
+nams <- c("PP01_ME_Pi_LDE-error.dat", "PP02_SK_PI_RDE-correct.dat", "PP03_CB_PI_LDD-correct.dat",  "PP04_AB_DRF_LDM-error.dat")
+# could be e.g.: nams <- dir(pat=".dat")
+nams <- gsub("[-.]","_",nams)        # turn '.' and '-' into separator '_'
+names2factors(nams, ~ subj + initials + task + stim:level + resp + dummy, sep="_")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

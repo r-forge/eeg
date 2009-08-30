@@ -1,11 +1,12 @@
 mean.bvadata <-
-function(obj, weights=1, na.rm=TRUE)
+function(x, weights=1, na.rm=TRUE)
 {
+	obj = x # inefficient because it first copies all of x, but for generic consistentcy argument should be called 'x'
 	dims   = dim(obj$x())
 	nsamp  = dims[1]
 	nchan  = dims[2]
 	ntrial = dims[3]
-	if(length(weights)!=1 && length(weights) != nrchan)
+	if(length(weights)!=1 && length(weights) != nchan)
 		stop("length 'weights' incompatible")
 	w = (!is.na(obj$x())) * if(length(weights)!=1) outer(matrix(1,nsamp,nchan), weights) else weights
 	x = w * obj$x()

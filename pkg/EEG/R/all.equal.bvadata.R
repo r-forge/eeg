@@ -1,8 +1,8 @@
 all.equal.bvadata <-
-function(x,y,important, ...){
+function(target, current,important, ...){
 	if(missing(important))
 		important = c('DataType','NumberOfChannels','SamplingInterval','SegmentDataPoints')
-	isTRUE(all.equal(x$header[[1]][important],y$header[[1]][important])) && 
-	   isTRUE(all.equal(x$header[-1], y$header[-1]))
+	isTRUE(all.equal(target$header[[1]][important],current$header[[1]][important])) && 
+	   isTRUE(all.equal(target$header[-1], current$header[-1]))
 }
 

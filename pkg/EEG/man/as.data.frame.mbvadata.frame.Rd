@@ -1,6 +1,7 @@
 \name{as.data.frame.mbvadata.frame}
 \Rdversion{1.1}
 \alias{as.data.frame.mbvadata.frame}
+\alias{data.frame.mbvadata.frame}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Convert mbvadata.frame to data.frame with amplitude values as columns
@@ -45,31 +46,37 @@ The \code{mbvadata.frame} \code{x} is converted to a \code{data.frame} with the 
 
 }
 \value{
+a data frame
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+data(gavgs)
+as.data.frame(gavgs, from=100, to=180, chan='Cz', FUN=colMeans)
+}
+
 
 ## The function is currently defined as
 function(x, channels, samples, from, to, vnames, FUN=c, ...) # dots for compatibility, FUN can be, e.g., colMeans to average across samples

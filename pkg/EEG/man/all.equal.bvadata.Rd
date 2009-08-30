@@ -9,49 +9,50 @@ test if two bvadata objects are equal
 test if two bvadata objects are equivalent
 }
 \usage{
-all.equal.bvadata(x, y, important, ...)
+\method{all.equal}{bvadata}(target, current, important, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x, y}{
+  \item{target, current}{
 objects of class \code{bvadata}
 }
   \item{important}{
 character vector of header node names that need to be equal
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+further arguments (unused)
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+Either \code{TRUE} (\code{NUL}L for \code{attr.all.equal}) or a vector of mode \code{"character"} describing the differences between target and current.
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
-%%  ~~who you are~~
+Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{all.equal}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+data(gavgs)
+all.equal(gavgs[1,1], gavgs[2,1])
+}
+
 
 ## The function is currently defined as
 function(x,y,important, ...){

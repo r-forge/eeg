@@ -27,15 +27,15 @@ A \code{mbvadata.frame} is a \code{data.frame} like object that behaves similarl
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -43,7 +43,10 @@ Raoul Grasman
 \code{\link[mean.mbvadata.frame]{mean}}
 }
 \examples{
-
+\dontrun{
+data(gavgs)
+class(gavgs) # == 'mbvadata.frame'
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

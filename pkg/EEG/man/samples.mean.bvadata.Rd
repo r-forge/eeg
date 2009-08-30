@@ -13,7 +13,7 @@ Returns the time sample indices of the times in \code{times}, or between \code{f
 }
 \usage{
 \method{samples}{mean.bvadata}(x, times, from = start(x$mean), to = end(x$mean))
-timeindx(x, start, end)
+\method{timeindx}{mean.bvadata}(x, start, end)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,36 +26,47 @@ vector of times for which the time sample indices need to be found
   \item{from, to}{
 alternatively, begin time of epoch and end time of epoch for which the time samples need to be found
 }
+  \item{start, end}{
+alternatively, begin time of epoch and end time of epoch for which the time samples need to be found
+}
 }
 \details{
 There's no difference between \code{samples} and \code{timeindx} except for the \code{times} alternative in \code{samples}
 }
 \value{
+numeric vector
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{timeindx}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+
+\dontrun{
+data(gavgs)
+x = gavgs[1,1] # mean.bvadata object
+timeindx(x, start = 110, end = 160) # from 110 to 160 msec after stimulus onset
+}
+
 
 ## The function is currently defined as
 function(x, times, from=start(x$mean), to=end(x$mean))

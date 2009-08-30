@@ -34,15 +34,15 @@ This is simply a wrapper function for multiple calls to \code{readBVADataFile}.
 \value{
 A list with in each component the imported data sets as \code{bvadata} objects.
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -50,10 +50,16 @@ Raoul Grasman
 \code{\link{readBVADataFile}}
 }
 \examples{
-	\dontrun{
-		dat = batchImportBVA("./raw_ascii_eeg", pat="\\.vhdr$", 
-				nm.pat="(.+)\\.vhdr$", newnm.pat="\\1")
-	}
+\dontrun{
+dat <- batchImportBVA("./raw_ascii_eeg", pat="\\.vhdr$", nm.pat="(.+)\\.vhdr$", newnm.pat="\\1")
+
+erps <- lapply(dat, mean) # compute ERPs
+
+# store the ERPs in a mbvadata frame
+nams <- names(erps)
+nams <- gsub("-", "_", nams)
+erps <- mbvadata.frame(erp=erps, names2factors(nams, ~subj+initials+task+stim:level+resp))
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

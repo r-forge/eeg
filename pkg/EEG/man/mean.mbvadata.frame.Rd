@@ -21,30 +21,31 @@ currently unused
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Each ERP is weighted with the proportion of the number of trials on which it is based in the computation of the grand average ERP.
 }
 \value{
 \code{\link{mean.bvadata}} object containing the grand average ERP
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[mean.bvadata]{mean}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+data(gavgs)
+GAVG = mean(gavgs)
+}
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

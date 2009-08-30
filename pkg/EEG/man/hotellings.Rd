@@ -38,21 +38,22 @@ List with components
 \item{posthoc }{Table of posthoc t-tests.}
 }
 \references{
-%% ~put references to the literature/web site here ~
+Stevens (1996). Applied Multivariate Statistics for the Social Sciences.
+Morrison, D. F. (1978). Multivariate Statistical Methods.
 }
 \author{
 Raoul Grasman
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 \section{Warning }{This function is better not used for regular analysis. 
 The Hotelling's T2 is correct, but there are better procedures for the posthoc analysis.}
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{manova.reshape}}
 }
 \examples{
 data = matrix(rnorm(5*30),,5)

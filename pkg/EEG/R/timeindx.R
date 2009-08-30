@@ -13,7 +13,7 @@ function (x, start, end)
 timeindx.mean.bvadata <-
 function (x, start, end) 
 {
-    dt = mfoo$header$`Common Infos`$SamplingInterval/1000 # microseconds to milliseconds
+    dt = x$header$`Common Infos`$SamplingInterval/1000 # microseconds to milliseconds
     shft = x$time0indx[1] - x$segmindx[1]
     time = (1:x$nsamp - 1 - shft) * dt
     seq(time)[time >= start & time < end]
