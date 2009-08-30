@@ -1,15 +1,17 @@
 \name{grandAvrg}
 \Rdversion{1.1}
 \alias{grandAvrg}
+\alias{+.gavg.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Compute grand average across bvadata objects.
 }
 \description{
-Compute grand average across bvadata objects. This function is OBSOLETE.
+Compute grand average across bvadata objects. Add \code{gavg.bvadata} objects. These functions and class are OBSOLETE.
 }
 \usage{
 grandAvrg(..., verbose = TRUE)
+\method{+}{gavg.bvadata}(a, b)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,6 +20,9 @@ bvadata objects
 }
   \item{verbose}{
 should feedback be printed on console?
+}
+  \item{a, b}{
+\code{gavg.bvadata} objects
 }
 }
 \details{

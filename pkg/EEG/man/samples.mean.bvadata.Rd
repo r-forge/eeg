@@ -4,6 +4,7 @@
 \alias{samples}
 \alias{samples.mean.bvadata}
 \alias{timeindx.mean.bvadata}
+\alias{timeindx.bvadata}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Epoch samples

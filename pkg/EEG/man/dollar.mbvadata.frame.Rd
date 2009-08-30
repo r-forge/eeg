@@ -13,7 +13,7 @@ Extract or replace subsets of mbvadata.frames.
 \usage{
 \method{[}{mbvadata.frame}(x, rows, cols, drop = TRUE)
 \method{$}{mbvadata.frame}(x, name)
-\method{$<-}{mbvadata.frame}(x, name, value)
+\method{$}{mbvadata.frame}(x, name) <- value
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -31,6 +31,9 @@ logical. When \code{FALSE}, an \code{mbvdata.frame} is always returned
 }
   \item{name}{
 elements to extract or replace
+}
+  \item{value}{
+A suitable replacement value: it will be repeated a whole number of times if necessary and it may be coerced. See \code{\link[Extract.data.frame]{[.data.frame}}.
 }
 }
 \details{

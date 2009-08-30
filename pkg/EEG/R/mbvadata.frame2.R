@@ -97,7 +97,7 @@ function(x, name, value)
 
 
 as.data.frame.mbvadata.frame <-
-function(x, channels, samples, from, to, vnames, FUN=c, ...) # dots for compatibility, FUN can be, e.g., colMeans to average across samples
+function(x, row.names = NULL, optional = FALSE, ..., channels, samples, from, to, vnames, FUN=c) # dots for compatibility, FUN can be, e.g., colMeans to average across samples
 {
 	#x = unclass(x)
 	data = attr(x,"data")

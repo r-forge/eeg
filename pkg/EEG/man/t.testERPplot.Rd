@@ -1,6 +1,6 @@
-\name{t.testERPplot}
+\name{ttestERPplot}
 \Rdversion{1.1}
-\alias{t.testERPplot}
+\alias{ttestERPplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 OBSOLETE plotting function
@@ -9,7 +9,7 @@ OBSOLETE plotting function
 OBSOLETE plotting function
 }
 \usage{
-t.testERPplot(x, y, i = 2, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "topright", legy = ylim[2] * 0.9, type = c("between", "within"))
+ttestERPplot(x, y, i = 2, alpha = 0.05, xdens = NULL, cicolx = "gray", legx = "topright", legy = ylim[2] * 0.9, type = c("between", "within"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

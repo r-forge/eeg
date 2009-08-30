@@ -17,13 +17,16 @@ mbvadata frames have a row names attribute, a character vector of length the num
 
 \usage{
 \method{row.names}{mbvadata.frame}(x)
-\method{row.names<-}{mbvadata.frame}(x, value)
+\method{row.names}{mbvadata.frame}(x) <- value
 }
 %- maybe also 'usage' for other objects documented here. 
 
 \arguments{
   \item{x}{
 mbvadata frame
+}
+  \item{value}{
+character vector with as many elements as there are columns in \code{x}
 }
   \item{\dots}{
 further arguments (unused OBSOLETE)

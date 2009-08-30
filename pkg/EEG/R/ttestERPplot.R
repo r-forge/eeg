@@ -1,4 +1,4 @@
-t.testERPplot <-
+ttestERPplot <-
 function(x,y,i=2,alpha=0.05,xdens=NULL,cicolx='gray',legx="topright", legy=ylim[2]*.9,type=c('between','within'))
 {
  xm = x$mean()[,i]; xsd = x$sd()[,i]; ym = y$mean()[,i]; ysd = y$sd()[,i];

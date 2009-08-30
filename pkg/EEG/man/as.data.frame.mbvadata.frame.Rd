@@ -10,12 +10,19 @@ Convert mbvadata.frame to data.frame with amplitude values as columns
 Convert mbvadata.frame to a regular data.frame extracting amplitudes values at specified sets of electrodes and time samples. Useful for statistical analysis of the extracted amplitude values.
 }
 \usage{
-\method{as.data.frame}{mbvadata.frame}(x, channels, samples, from, to, vnames, FUN = c, ...)
+\method{as.data.frame}{mbvadata.frame}(x, row.names = NULL, optional = FALSE, ..., channels, 
+	samples, from, to, vnames, FUN = c)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
 mbvadata.frame
+}
+  \item{row.names}{
+NULL or a character vector giving the row names for the data frame. Currently unused.
+}
+  \item{optional}{
+See \code{\link{as.data.frame}}. Currently unused.
 }
   \item{channels}{
 Channels for which amplitude samples have to be extracted

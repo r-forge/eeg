@@ -10,14 +10,14 @@ Time sample-wise t-tests for ERPs
 Function to do a pairwise comparison between two mvbadata.frames on a time point by time point basis. 
 }
 \usage{
-\method{t.test}{mbvadata.frame}(obj1, obj2, chan = "Cz", ylim, xlim, alpha = 0.05,
-                 xdens = NULL, cicolx = "gray", legx = "topright", legy
-                 = ylim[2] * 0.9, type = c("within", "between"), cname,
-                 pat = "\\..")
+\method{t.test}{mbvadata.frame}(x, y, chan = "Cz", 
+	ylim, xlim, alpha = 0.05, xdens = NULL, cicolx = "gray", 
+	legx = "topright", legy = ylim[2] * 0.9, type = c("within", "between"), 
+	cname, pat, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj1, obj2}{
+  \item{x, y}{
 mbvadata frames
 }
   \item{chan}{
@@ -42,10 +42,13 @@ legend coordinates. See \code{\link{legend}}.
 type of the comparison; either "within" or "between". (WILL CHANGE TO \code{pairwise} to match \code{t.test} better)
 }
   \item{cname}{
-%%     ~~Describe \code{cname} here~~
+list containing two vectors of equal length with indices/names of the rows of \code{x} and \code{y} that are used to match up pairs if \code{type = "within"}. Alternatively, use \code{pat}
 }
   \item{pat}{
-%%     ~~Describe \code{pat} here~~
+regular expression pattern that whose matches are removed from the names in order to match entries in both mbvadata frames if \code{type = "within"}. Alternatively, use \code{cname}
+}
+  \item{...}{ % need to be here for Generic consistency (an R requirement)
+further arguments, currently unused
 }
 }
 \details{

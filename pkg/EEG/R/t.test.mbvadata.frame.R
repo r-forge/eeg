@@ -1,7 +1,11 @@
 t.test.mbvadata.frame <-
-function(obj1, obj2, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray',legx="topright", 
-	legy=ylim[2]*.9, type=c('within', 'between'), cname, pat="\\..")
+function(x, y, chan='Cz', ylim, xlim, alpha=0.05, xdens=NULL, cicolx='gray',legx="topright", 
+	legy=ylim[2]*.9, type=c('within', 'between'), cname, pat, ...)
 {
+	if(missing(pat))
+		pat = "\\.."
+	obj1 = x # TODO: necessary for Generic consistency (R requirement); inefficient because entire frame is now copied, needs to be changed
+	obj2 = y # TODO: necessary for Generic consistency (R requirement); inefficient because entire frame is now copied, needs to be changed
 	type = match.arg(type)
 	if(any(class(obj1)!=class(obj2))) 
 		stop('not both of class %s', class(obj1))

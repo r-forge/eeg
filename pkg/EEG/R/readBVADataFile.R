@@ -1,11 +1,12 @@
 readBVADataFile <-
-function(file=file.choose(),mfile=gsub("\\..+$",".VMRK",file),
-  dec=".")
+function(file=file.choose(),mfile, dec=".")
 {
-   x = as.matrix(read.table(file,TRUE),dec=dec);
-   mrk = as.data.frame(readMarkerFile(mfile))
+	if (missing(mfile))
+	    mfile <- gsub("\\..+$",".VMRK",file)
+   x        <- as.matrix(read.table(file,TRUE),dec=dec);
+   mrk      <- as.data.frame(readMarkerFile(mfile))
    segmRows <- stimRows <- mrk$type=='New Segment'
-   segindx <- tindx <- as.numeric(as.character(mrk$position[stimRows]))
+   segindx  <- tindx <- as.numeric(as.character(mrk$position[stimRows]))
    if(any(diff(diff(tindx))!=0)){
        # check if this is due to non-trial start Stimulus markers; guess which to use
        typeNum = as.numeric(gsub("\\D","",mrk$description,perl=TRUE))

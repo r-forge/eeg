@@ -9,13 +9,17 @@ Compute Evoked/Event Related Potentials
 Compute the average signals across trials---i.e., compute the ERPs from a bvadata object.
 }
 \usage{
-\method{mean}{bvadata}(x, weights = 1, na.rm = TRUE)
+\method{mean}{bvadata}(x, ..., weights = 1, na.rm = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
 bvadata object
 }
+  \item{...}{ % needs to be here for Generic function consistency!!
+currently unused 
+}
+
   \item{weights}{
 vector with the same number of weights as there are trials; the weighted average is used if specified
 }

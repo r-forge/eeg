@@ -1,5 +1,5 @@
 mean.bvadata <-
-function(x, weights=1, na.rm=TRUE)
+function(x, ..., weights=1, na.rm=TRUE)
 {
 	obj = x # inefficient because it first copies all of x, but for generic consistentcy argument should be called 'x'
 	dims   = dim(obj$x())

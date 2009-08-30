@@ -9,7 +9,7 @@ Read data from Brain Vision Analyzer data file
 Read data from Brain Vision Analyzer data file.
 }
 \usage{
-readBVADataFile(file = file.choose(), mfile = gsub("\\..+$", ".VMRK", file), dec = ".")
+readBVADataFile(file = file.choose(), mfile, dec = ".")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
